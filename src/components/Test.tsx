@@ -1,12 +1,10 @@
-import React, { useContext } from 'react';
-import { Context } from '../state/StateContext';
+import React from 'react';
+import { useGlobalState, useDispatch } from '../state/StateContext';
 import { changeAppStatus } from '../state/actions';
 
 export const Test = () => {
-	const [state, dispatch]: any = useContext(Context);
-	if (!state.isAppReady) {
-		dispatch(changeAppStatus(true));
-	}
+	const state = useGlobalState().isAppReady;
+	const dispatch = useDispatch();
 	console.log(state);
-	return <div></div>;
+	return <div onClick={() => dispatch(changeAppStatus(true))}>Ok</div>;
 };
