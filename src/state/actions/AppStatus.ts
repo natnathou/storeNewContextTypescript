@@ -1,5 +1,6 @@
 import { ActionType } from './index';
 import { Action } from './Actions';
+
 export enum AppStatusActions {
 	CHANGE_APP_STATUS
 }

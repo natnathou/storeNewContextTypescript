@@ -7,5 +7,6 @@ export const Test = () => {
 	if (!state.isAppReady) {
 		dispatch(changeAppStatus(true));
 	}
+	console.log(state);
 	return <div></div>;
 };
